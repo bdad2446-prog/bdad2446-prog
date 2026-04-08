@@ -1,132 +1,183 @@
-/* ABOUT SECTION BASE */
-.about_section {
-    min-height: 100vh;
-    padding: 80px 5%; /* Increased padding for professional breathing room */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    background: #070b13;
-    color: #94a3b8;
+:root {
+    --bg: #030507;
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --border: rgba(255, 255, 255, 0.08);
+    --accent: #2eb6d1;
+    --text-dim: #94a3b8;
+    --font-code: 'JetBrains Mono', monospace;
 }
 
-.about_section > h1 {
+body {
+    background: var(--bg);
     color: white;
-    font-weight: 800;
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Parent container */
-.about_section .parent_div {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align content to top */
-    gap: 40px;
-}
-
-/* Shared Section Styles (Left & Right) */
-.about_section .left_section,
-.about_section .right_section {
-    flex: 1; /* Distributes space equally without needing width: 50% */
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.about_section h3 {
-    color: white;
-    font-weight: 700;
-    font-size: 1.5rem;
+.about_wrapper {
     position: relative;
-    padding-bottom: 10px;
+    padding: 160px 0 100px;
 }
 
-/* Add a subtle accent line under headings */
-.about_section h3::after {
-    content: '';
+.ambient-glow {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: #2eb6d1;
-    border-radius: 2px;
+    top: 20%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(46, 182, 209, 0.04) 0%, transparent 70%);
+    pointer-events: none;
 }
 
-/* Left Section Content */
-.about_section .left_section .intro p {
-    font-size: 1rem;
-    line-height: 1.8;
+/* HEADER */
+.about_header {
+    margin-bottom: 80px;
+}
+
+.badge_code {
+    font-family: var(--font-code);
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
     margin-bottom: 15px;
 }
 
-/* Right Section Content */
-.about_section .right_section .lists_div {
-    display: flex;
-    flex-wrap: wrap; /* Allows lists to stack on smaller tablets */
-    gap: 30px;
+.about_header h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
 }
 
-.about_section .right_section .lists_div ul {
-    padding: 0;
-    margin: 0;
+.text_gradient {
+    background: linear-gradient(90deg, #fff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.about_section .right_section .lists_div ul li {
-    list-style: none;
+/* GRID */
+.parent_grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* TERMINAL WINDOW STYLE */
+.terminal_window {
+    background: #0a0e14;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.terminal_header {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
 }
 
-.about_section .right_section .lists_div ul li .material-symbols-outlined {
-    color: #2eb6d1;
-    font-size: 22px;
-    margin-right: 12px;
-    background: rgba(46, 182, 209, 0.1);
-    padding: 5px;
+.dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
 }
 
-.about_section .right_section .lists_div ul li p {
-    margin: 0;
-    font-size: 0.95rem;
+.red {
+    background: #ff5f56;
 }
 
-/* MOBILE RESPONSIVE OVERRIDES */
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.terminal_title {
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-left: 10px;
+}
+
+.terminal_body {
+    padding: 40px;
+}
+
+.terminal_body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+    margin-bottom: 25px;
+}
+
+.terminal_body .highlight {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+}
+
+/* SKILL SPEC CARD */
+.spec_card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.spec_card h6 {
+    font-family: var(--font-code);
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-size: 0.85rem;
+}
+
+.skill_grid {
+    display: grid;
+    gap: 20px;
+}
+
+.skill_item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.skill_item:hover {
+    border-color: var(--accent);
+    background: rgba(46, 182, 209, 0.05);
+}
+
+.skill_item span:first-child {
+    color: var(--accent);
+    font-size: 20px;
+}
+
+.skill_item span:last-child {
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
 @media (max-width: 992px) {
-    .about_section .parent_div {
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .about_section {
-        padding: 60px 20px;
+    .parent_grid {
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .about_section .parent_div {
-        flex-direction: column;
-        align-items: flex-start; /* Better for reading text */
-    }
-
-    .about_section .left_section,
-    .about_section .right_section {
-        width: 100%;
-    }
-
-    /* Center the main title on mobile */
-    .about_section h3::after {
-        left: 0; /* Keeps the accent line aligned with text */
-    }
-
-    .about_section .right_section .lists_div {
-        flex-direction: column;
-        gap: 10px;
+    .about_wrapper {
+        padding-top: 100px;
     }
 }
