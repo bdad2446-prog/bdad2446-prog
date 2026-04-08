@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BaghdadDevLab | Quantum Python Automation</title>
+    <title>BaghdadDevLab | Premium Python Solutions</title>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Orbitron:wght@400;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,133 +16,82 @@
 
 <body>
 
-    <div class="hud-top">SYSTEM_STATUS: <span class="blink">STABLE</span> // ADDR: 192.168.1.104</div>
-    <div class="hud-bottom">EST_SCRAPE_TIME: 0.004s // LOAD: 14%</div>
+    <div id="header"></div>
 
     <section id="hero" class="hero_section">
-        <canvas id="matrix-canvas"></canvas>
-        <div class="grid-mesh"></div>
-        <div class="vignette"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb-2"></div>
 
-        <div class="hero_content">
-            <div class="glitch-container">
-                <h1 class="glitch" data-text="BAGHDAD_DEV_LAB">BAGHDAD_DEV_LAB</h1>
-            </div>
-
-            <div class="architecture-label">
-                <span class="bracket">[</span>
-                ARCHITECTING AUTOMATION
-                <span class="bracket">]</span>
-            </div>
-
-            <div class="console-box">
-                <div class="console-header">
-                    <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-                    <div class="tab">python_kernel.exe</div>
+        <div class="container hero_container">
+            <div class="hero_text_content">
+                <div class="badge_minimal">
+                    <span class="status_dot"></span> Python Automation Expert
                 </div>
-                <div class="console-body">
-                    <div class="line"><span class="cyan">>>></span> import devlab_core as dl</div>
-                    <div class="line"><span class="cyan">>>></span> dl.initialize_logic(mode="EXTREME")</div>
-                    <div class="line"><span class="white">[LOG]</span> <span class="typing-text"></span><span
-                            class="cursor">_</span></div>
+                <h1>Engineering Tools That <span class="text_gradient">Scale Businesses.</span></h1>
+                <p class="hero_desc">I build high-performance Python scripts, intelligent data scrapers, and bespoke
+                    desktop applications with a focus on clean architecture and reliability.</p>
+
+                <div class="hero_actions">
+                    <button class="btn_prime" onclick="window.location.href='portfolio.html'">Explore Archive</button>
+                    <button class="btn_ghost" onclick="window.location.href='contacts.html'">Get in Touch</button>
                 </div>
             </div>
 
-            <div class="action-zone">
-                <button class="quantum-btn" onclick="window.location.href='portfolio.html'">
-                    <span class="btn-text">DECRYPT_WORKS</span>
-                    <span class="btn-flare"></span>
-                </button>
-                <button class="quantum-btn outline" onclick="window.location.href='contacts.html'">
-                    <span class="btn-text">ESTABLISH_LINK</span>
-                </button>
+            <div class="hero_visual">
+                <div class="glass_card">
+                    <div class="card_header">
+                        <div class="circles"><span></span><span></span><span></span></div>
+                        <div class="file_name">main.py</div>
+                    </div>
+                    <div class="card_body">
+                        <pre><code><span class="p_key">class</span> <span class="p_class">Automation</span>:
+    <span class="p_key">def</span> <span class="p_func">optimize</span>(self):
+        self.status = <span class="p_str">"Running"</span>
+        <span class="p_key">return</span> <span class="p_func">process</span>()</code></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="deep_logic">
+    <section class="services_section">
         <div class="container">
-            <div class="logic-header">
-                <h2>// ENGINEERING_SPECIFICATIONS</h2>
-            </div>
-            <div class="spec-grid">
-                <div class="spec-card">
-                    <div class="spec-id">001</div>
-                    <span class="material-symbols-outlined">api</span>
-                    <h4>Backend Synthesis</h4>
-                    <p>Building high-concurrency API integrations that handle millions of requests with Python's
-                        Await/Async syntax.</p>
+            <div class="bento_grid">
+                <div class="bento_item large">
+                    <span class="material-symbols-outlined">data_object</span>
+                    <h3>Data Intelligence</h3>
+                    <p>Scraping complex, dynamic websites and delivering structured data in Excel, CSV, or SQL.</p>
                 </div>
-                <div class="spec-card">
-                    <div class="spec-id">002</div>
-                    <span class="material-symbols-outlined">analytics</span>
-                    <h4>Quantitative Scraping</h4>
-                    <p>Industrial-grade scrapers designed to bypass detection while maintaining maximum data integrity.
-                    </p>
+                <div class="bento_item small">
+                    <span class="material-symbols-outlined">bolt</span>
+                    <h3>Speed</h3>
+                    <p>Optimized AsyncIO logic.</p>
                 </div>
-                <div class="spec-card">
-                    <div class="spec-id">003</div>
-                    <span class="material-symbols-outlined">memory</span>
-                    <h4>Desktop Core</h4>
-                    <p>Low-latency desktop tools developed for Windows/Linux environments with polished custom UI
-                        shells.</p>
+                <div class="bento_item small">
+                    <span class="material-symbols-outlined">lock</span>
+                    <h3>Security</h3>
+                    <p>Hardened Python scripts.</p>
+                </div>
+                <div class="bento_item medium">
+                    <span class="material-symbols-outlined">desktop_windows</span>
+                    <h3>Desktop GUI</h3>
+                    <p>Professional desktop shells built with PySide and modern UI aesthetics.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="footer"></div>
 
     <script>
-        // TYPE ENGINE
-        const textElement = document.querySelector('.typing-text');
-        const logs = ["Loading Neural Modules...", "Bypassing WAF...", "Compiling Scripts...", "Optimization Complete."];
-        let i = 0, j = 0, isDel = false;
+        fetch('header.html').then(r => r.text()).then(d => document.getElementById('header').innerHTML = d);
+        fetch('footer.html').then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);
 
-        function type() {
-            let current = logs[i];
-            textElement.textContent = isDel ? current.substring(0, j--) : current.substring(0, j++);
-            if (!isDel && j > current.length) { isDel = true; setTimeout(type, 1500); }
-            else if (isDel && j === 0) { isDel = false; i = (i + 1) % logs.length; setTimeout(type, 500); }
-            else { setTimeout(type, isDel ? 30 : 70); }
-        }
-        type();
-
-        // 3D MATRIX CANVAS
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-        let w, h, columns;
-        const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
-
-        function init() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
-            columns = Math.floor(w / 20);
-            drops = new Array(columns).fill(1);
-        }
-
-        let drops = [];
-        window.addEventListener('resize', init);
-        init();
-
-        function drawMatrix() {
-            ctx.fillStyle = "rgba(2, 4, 8, 0.1)";
-            ctx.fillRect(0, 0, w, h);
-            ctx.fillStyle = "#2eb6d1";
-            ctx.font = "15px Fira Code";
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillText(text, i * 20, drops[i] * 20);
-                if (drops[i] * 20 > h && Math.random() > 0.975) drops[i] = 0;
-                drops[i]++;
-            }
-        }
-        setInterval(drawMatrix, 50);
-
-        // CARD OBSERVER
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        // Simple Fade-in on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('fade_in'); });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.spec-card').forEach(s => obs.observe(s));
+        document.querySelectorAll('.bento_item').forEach(el => observer.observe(el));
     </script>
 </body>
 
