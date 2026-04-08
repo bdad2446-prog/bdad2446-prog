@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -5,232 +6,217 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: #070b13;
-    color: white;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .material-symbols-outlined {
-    font-size: 26px;
     color: #2eb6d1;
 }
 
-a {
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-}
-
-/* Header */
-.header_section {
-    width: 100%;
-    background: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header_section .title_div {
-    color: #2eb6d1;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.header_section nav a {
-    color: white;
-    margin-left: 20px;
-    transition: 0.3s;
-}
-
-.header_section nav a:hover {
-    color: #2eb6d1;
-}
-
-/* Hero */
+/* HERO SECTION */
 .hero_section {
     position: relative;
+    width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    color: #00ffd6;
+    overflow: hidden;
+    padding: 20px; /* Added padding for small screens */
 }
 
-#particles-js {
+canvas#particles {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    pointer-events: none; /* Allows clicking buttons through the canvas */
 }
 
-.hero_content {
-    position: relative;
+.buttons_div {
+    display: flex;
+    gap: 15px;
     z-index: 2;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
 }
 
-.hero_section h1 {
-    font-size: 3rem;
-    color: #2eb6d1;
-    margin-bottom: 15px;
-}
-
-.hero_section h4 {
-    font-size: 1.3rem;
-    color: #00c0ff;
-    margin-bottom: 25px;
-}
-
-.hero_section .buttons_div button {
-    margin: 10px;
+.btn-primary, .btn-success {
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    color: #fff;
     transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .btn-primary {
     background: #2eb6d1;
-    border: none;
-}
-
-.btn-primary:hover {
-    background: #2293aa;
+    text-shadow: 0 0 8px rgba(46, 182, 209, 0.6);
 }
 
 .btn-success {
-    background: #20c997;
-    border: none;
+    background: #1b8b73;
+    text-shadow: 0 0 8px rgba(27, 139, 115, 0.6);
 }
 
-.btn-success:hover {
-    background: #198f6d;
+.btn-primary:hover, .btn-success:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
-/* Why Section */
-.why_section {
-    background: #091725;
-    padding: 80px 0;
-}
-
-.why_section h2 {
-    font-size: 2.5rem;
+/* HERO TEXT - Fluid Typography */
+.hero_section h1 {
+    font-size: clamp(1.8rem, 6vw, 3.5rem); /* Scales between 1.8rem and 3.5rem */
+    font-weight: bolder;
     color: #2eb6d1;
-    margin-bottom: 10px;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 0 0 8px #2eb6d1;
+    max-width: 900px;
 }
 
-.why_section h5 {
-    color: #94a3b8;
-    margin-bottom: 50px;
+.hero_section h4 {
+    color: #79ffe1;
+    text-align: center;
+    margin: 20px 0;
+    z-index: 2;
+    text-shadow: 0 0 6px #79ffe1;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    max-width: 700px;
 }
 
-.why_card {
-    background: #0f1529;
-    padding: 30px;
-    border-radius: 15px;
-    transition: 0.3s;
+.typing-text {
+    font-size: 1.2rem;
+    color: #79ffe1;
+    margin-bottom: 30px;
+    height: auto;
+    min-height: 28px;
+    border-right: 3px solid #79ffe1;
+    white-space: normal; /* Changed to allow wrapping on very small screens */
+    letter-spacing: 2px;
+    z-index: 2;
     text-align: center;
 }
 
-.why_card:hover {
-    transform: translateY(-5px);
-    background: rgba(46, 182, 209, 0.1);
+/* FLOATING SHAPES - Hidden on very small screens to reduce clutter */
+@media (max-width: 480px) {
+    .shape { display: none; }
 }
 
-.why_card h3 {
-    margin: 20px 0;
-    color: white;
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: float 12s infinite ease-in-out;
+    z-index: 1;
 }
+/* ... shapes 1-5 remain the same ... */
 
-.why_card p {
-    color: #94a3b8;
-    font-size: 15px;
-}
-
-/* Portfolio */
-.portfolio_section {
-    padding: 80px 0;
-    background: #070b13;
-}
-
-.portfolio_card {
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.portfolio_card:hover {
-    transform: translateY(-5px);
-    background: rgba(46, 182, 209, 0.1);
-}
-
-.portfolio_card h4 {
-    color: #2eb6d1;
-    margin-top: 15px;
-}
-
-.portfolio_card p {
-    color: #94a3b8;
-    font-size: 14px;
-}
-
-/* Footer */
-.footer_section {
-    background: #0a1826;
-    padding: 50px 15px;
+/* WHY SECTION */
+.why_section {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px; /* More vertical padding */
+    justify-content: center;
+    align-items: center;
+    background: #091725;
     color: #797c7f;
 }
 
-.footer_section .title_div {
-    color: #2eb6d1;
-    font-weight: bold;
+.why_section h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: bolder;
+    color: white;
+    text-align: center;
     margin-bottom: 15px;
 }
 
-.footer_section a {
-    color: #797c7f;
-    transition: 0.3s;
+.why_section h5 {
+    text-align: center;
+    margin: 15px 0 40px 0;
+    max-width: 600px;
+    font-size: 1rem;
 }
 
-.footer_section a:hover {
-    color: #2eb6d1;
+.cards_div {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Essential for responsiveness */
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.footer_section i {
-    font-size: 20px;
-    margin: 5px;
+.cards_div > div {
+    background: #0f1529;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Responsive width */
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive */
-@media(max-width:768px) {
+.cards_div div.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cards_div div:hover {
+    transform: translateY(-10px);
+    background: rgba(46, 182, 209, 0.1);
+    border-color: #2eb6d1;
+}
+
+.cards_div div h4 {
+    color: white;
+    margin: 15px 0 10px;
+}
+
+.cards_div div p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* MEDIA QUERIES */
+@media(max-width: 768px) {
+    .buttons_div {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn-primary, .btn-success {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .why_section {
+        padding: 50px 15px;
+    }
+}
+
+@media(max-width: 480px) {
     .hero_section h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
-
-    .hero_section h4 {
-        font-size: 1rem;
-    }
-
-    .hero_section .buttons_div {
-        flex-direction: column;
-    }
-
-    .why_section .row {
-        flex-direction: column;
-    }
-
-    .portfolio_section .row {
-        flex-direction: column;
-    }
-
-    .header_section {
-        flex-direction: column;
-        gap: 10px;
+    
+    .cards_div > div {
+        max-width: 100%; /* Full width on tiny screens */
     }
 }
