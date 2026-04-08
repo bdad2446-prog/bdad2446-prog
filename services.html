@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaghdadDevLab | Portfolio</title>
+
+    <!-- icons :  -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap : -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/services.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <section class="services_section">
+        <h2>Professional Python Solutions</h2>
+        <p>Custom scripts, desktop apps, and automation tailored for your business</p>
+
+        <div class="carts_div">
+            <div>
+                <span class="material-symbols-outlined">
+                    bolt
+                </span>
+                <h3>Python Automation</h3>
+                <p>Save hours with custom scripts automating repetitive tasks.</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined">
+                    desktop_windows
+                </span>
+                <h3>Desktop Applications</h3>
+                <p>Tailored desktop tools for your business workflow.</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined">
+                    bug_report
+                </span>
+                <h3>Bug Fixing & Optimization</h3>
+                <p>Improve software performance, fix errors, and enhance stability.</p>
+            </div>
+        </div>
+        <div class="specific_div">
+            <h2>Need something speciffic?</h2>
+            <p>Every project is unique. if you have a specific Python development need that doesn't fit into these
+                <br> categories, let's discuss how I can help bring your idea to life. </bro>
+            </p>
+        </div>
+
+
+    </section>
+    <div id="footer"></div>
+
+    <!-- JS to include header/footer -->
+    <script>
+        // Load header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => { document.getElementById('header').innerHTML = data; });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => { document.getElementById('footer').innerHTML = data; });
+    </script>
+</body>
+
+</html>

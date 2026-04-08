@@ -1,0 +1,165 @@
+<section class="footer_section">
+    <div class="about_div">
+        <div id="title_div" class="title_div">
+
+            <span class="material-symbols-outlined">code_xml</span><a href="index.html">
+                BaghdadDevLab
+            </a>
+        </div>
+        <p>
+            Professional Python development services specializing in <br>
+            automation, desktop applications, and code optimization.
+        </p>
+    </div>
+
+    <div class="links_div">
+        <h6>Quick links</h6>
+        <nav class="links_nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contacts.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="contacts_div">
+        <h6>Contacts</h6>
+        <nav class="contacts_nav">
+            <a href="mailto:bdad2446@gmail.com">
+                <span class="material-symbols-outlined">mail</span>
+                bdad2446@gmail.com
+            </a>
+            <a class="location" href="#home">
+                <span class="material-symbols-outlined">public</span>
+                Algeria <img class="flag" src="https://flagcdn.com/w40/dz.png" alt="Algeria Flag">
+            </a>
+        </nav>
+        <span class="social_links">
+            <a href="https://github.com/bdad2446-prog" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://wa.me/213540525486" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </span>
+    </div>
+
+    <p class="copyrights">© 2026 Baghdad DevLab. All rights reserved.</p>
+
+    <style>
+        /* Footer Section CSS */
+        .footer_section {
+            padding: 50px 15px 20px 15px;
+            gap: 40px;
+            width: 100%;
+            background: #0a1826eb;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .footer_section .about_div .title_div {
+            display: flex;
+            align-items: center;
+            font-weight: bolder;
+            color: #2eb6d1;
+            margin-bottom: 20px;
+        }
+
+        .footer_section .about_div .title_div a {
+            text-decoration: none;
+            color: #2eb6d1;
+        }
+
+        .footer_section .about_div p {
+            color: #797c7f;
+            font-size: 12px;
+        }
+
+        .footer_section .links_div,
+        .footer_section .contacts_div {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer_section .links_div h6,
+        .footer_section .contacts_div h6 {
+            color: #2eb6d1;
+            margin-bottom: 10px;
+        }
+
+        .footer_section .links_nav,
+        .footer_section .contacts_nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer_section .links_nav a,
+        .footer_section .contacts_nav a {
+            color: #797c7f;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer_section .links_nav a:hover,
+        .footer_section .contacts_nav a:hover {
+            color: #2eb6d1;
+        }
+
+        .footer_section .contacts_nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer_section .contacts_nav .flag {
+            width: 20px;
+            border-radius: 3px;
+        }
+
+        .footer_section .social_links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer_section .social_links a i {
+            font-size: 22px;
+            color: #797c7f;
+            transition: 0.3s;
+        }
+
+        .footer_section .social_links a:hover i {
+            color: #2eb6d1;
+        }
+
+        .footer_section .copyrights {
+            color: #797c7f;
+            font-size: 12px;
+            font-weight: lighter;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .footer_section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer_section .about_div,
+            .footer_section .links_div,
+            .footer_section .contacts_div {
+                width: 100%;
+            }
+
+            .footer_section .social_links {
+                justify-content: center;
+            }
+        }
+    </style>
+</section>
