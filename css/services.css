@@ -1,3 +1,4 @@
+/* RESET & BASE */
 * {
     margin: 0;
     padding: 0;
@@ -5,82 +6,116 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background: #070b13;
+    color: #94a3b8;
+    line-height: 1.6;
 }
 
+/* SERVICES SECTION */
 .services_section {
     min-height: 80vh;
-    margin: 50px 0;
+    padding: 80px 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    text-align: center;
 }
 
-.services_section>h2 {
-
+.services_section > h2 {
     color: white;
-    font-weight: bolder;
+    font-weight: 800;
+    /* Scales between 1.8rem and 2.5rem based on screen size */
+    font-size: clamp(1.8rem, 5vw, 2.5rem); 
+    margin-bottom: 10px;
 }
 
-.services_section>p {
+.services_section > p {
     color: #94a3b8;
+    max-width: 600px;
+    margin-bottom: 50px;
 }
 
+/* CARDS GRID SYSTEM */
 .services_section .carts_div {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    /* Magic line: creates columns that wrap automatically at 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
 }
 
 .services_section .carts_div div {
-    padding: 20px 10px;
-    border-radius: 20px;
+    padding: 40px 25px;
+    border-radius: 24px;
     background: #0f1529;
-    flex: 1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .services_section .carts_div div:hover {
-    transform: translateY(-5px);
-    background: #ffffff1a;
-    cursor: pointer;
+    transform: translateY(-10px);
+    background: #161e36;
+    border-color: #2eb6d1;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
-
 
 .services_section .carts_div .material-symbols-outlined {
     color: #2eb6d1;
-    background: #ffffff26;
-    padding: 10px;
-    font-size: 52px;
-    border-radius: 20px;
+    background: rgba(46, 182, 209, 0.1);
+    padding: 15px;
+    font-size: 45px;
+    border-radius: 18px;
+    margin-bottom: 15px;
 }
 
 .services_section .carts_div h3 {
     color: white;
-    font-weight: bold;
-    margin: 20px 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
-.services_section .carts_div p {
-    color: #94a3b8;
-}
-
-
+/* SPECIFIC DIV (CTA BOX) */
 .specific_div {
-    width: 90%;
-    padding: 40px 80px;
-    background: #0f1529;
-    border-radius: 20px;
-    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 60px 40px;
+    background: linear-gradient(145deg, #0f1529, #070b13);
+    border: 1px dashed rgba(46, 182, 209, 0.3);
+    border-radius: 24px;
+    margin: 0 auto;
 }
 
 .specific_div h2 {
     color: white;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 15px;
 }
 
-.specific_div p {
-    color: #94a3b8;
+/* MOBILE RESPONSIVE OVERRIDES */
+@media (max-width: 768px) {
+    .services_section {
+        padding: 50px 20px;
+    }
+
+    .services_section .carts_div {
+        grid-template-columns: 1fr; /* Force 1 column on tablets/phones */
+        gap: 20px;
+    }
+
+    .specific_div {
+        padding: 40px 20px;
+        width: 100%;
+    }
+
+    /* Prevent text "widows" from <br> tags on mobile */
+    .specific_div br {
+        display: none;
+    }
 }
