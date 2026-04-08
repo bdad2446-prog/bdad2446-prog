@@ -4,107 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BaghdadDevLab</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
     <style>
-        /* Base Styles */
+        :root {
+            --bg-dark: #030507;
+            --accent: #2eb6d1;
+            --text-dim: #94a3b8;
+            --glass: rgba(3, 5, 7, 0.8);
+            --border: rgba(255, 255, 255, 0.08);
+            --font-main: 'Inter', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
         }
 
         .header_section {
             width: 100%;
-            height: 70px;
-            /* Increased slightly for better visual balance */
-            padding: 0 5%;
-            background-color: #000;
+            height: 80px;
+            padding: 0 8%;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            /* High-end Glass effect */
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: fixed;
+            /* Fixed is better for this design */
             top: 0;
-            z-index: 1000;
+            left: 0;
+            z-index: 2000;
+            border-bottom: 1px solid var(--border);
         }
 
+        /* Branding */
         .header_section .title_div {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: #2eb6d1;
-            font-weight: bold;
-            font-size: 1.2rem;
+            gap: 12px;
+            font-family: var(--font-code);
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
         }
 
         .header_section .title_div a {
             text-decoration: none;
-            color: #2eb6d1;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .header_section .title_div span {
+            color: var(--accent);
+            font-size: 24px;
+        }
+
+        .header_section .title_div:hover a {
+            color: var(--accent);
         }
 
         /* Desktop Navigation */
         .header_section nav {
             display: flex;
             align-items: center;
+            gap: 32px;
         }
 
         .header_section nav a {
-            margin-left: 25px;
             text-decoration: none;
-            color: white;
-            font-size: 0.95rem;
-            transition: 0.3s ease;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-family: var(--font-main);
+            font-weight: 400;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .header_section nav a:hover {
-            color: #2eb6d1;
+            color: #fff;
         }
 
-        /* Mobile Menu Toggle (Hidden on Desktop) */
+        /* Underline indicator for the Architect look */
+        .header_section nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .header_section nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
         .menu-toggle {
             display: none;
-            flex-direction: column;
             cursor: pointer;
             color: white;
+            z-index: 2001;
         }
 
         #menu-checkbox {
             display: none;
         }
 
-        /* Responsive Breakpoint (Tablet/Mobile) */
-        @media (max-width: 768px) {
+        /* Mobile Adjustments */
+        @media (max-width: 850px) {
+            .header_section {
+                padding: 0 5%;
+            }
+
             .menu-toggle {
-                display: flex;
+                display: block;
             }
 
             .header_section nav {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.95);
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background: #05080a;
+                border-left: 1px solid var(--border);
                 flex-direction: column;
-                padding: 20px 0;
-                /* Slide up effect */
-                transform: translateY(-150%);
-                transition: transform 0.4s ease-in-out;
-                z-index: -1;
+                justify-content: center;
+                align-items: flex-start;
+                padding-left: 15%;
+                gap: 40px;
+                transform: translateX(100%);
+                transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
             }
 
-            /* When checkbox is checked, show the menu */
             #menu-checkbox:checked~nav {
-                transform: translateY(0);
+                transform: translateX(0);
+                box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
             }
 
             .header_section nav a {
-                margin: 15px 0;
-                font-size: 1.1rem;
-                width: 100%;
-                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #fff;
             }
         }
     </style>
@@ -114,14 +164,14 @@
 
     <section class="header_section">
         <div class="title_div">
-            <span class="material-symbols-outlined">code_xml</span>
+            <span class="material-symbols-outlined">terminal</span>
             <a href="index.html">BaghdadDevLab</a>
         </div>
 
         <input type="checkbox" id="menu-checkbox">
 
         <label for="menu-checkbox" class="menu-toggle">
-            <span class="material-symbols-outlined">menu</span>
+            <span class="material-symbols-outlined">drag_handle</span>
         </label>
 
         <nav class="nav">
