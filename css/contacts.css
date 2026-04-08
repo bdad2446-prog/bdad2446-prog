@@ -1,4 +1,4 @@
-/* 1. GLOBAL & BASE - Keeping your original styles */
+/* RESET & BASE - Original Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,54 +8,51 @@
 body {
     font-family: Arial, sans-serif;
     background: #070b13;
-    overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
+    overflow-x: hidden; /* Prevents side-scrolling on mobile */
 }
 
 .contact_section {
     min-height: 100vh;
-    padding: 60px 0;
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Better for long scrolling content */
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
-.contact_section > h1 {
+.contact_section>h1 {
     color: white;
     font-weight: bolder;
     text-align: center;
 }
 
-.contact_section > h3 {
+.contact_section>h3 {
     color: #94a3b8;
     text-align: center;
     padding: 0 15px;
-    font-size: 1.1rem;
 }
 
-/* 2. PARENT DIV - Using Flex for Desktop */
+/* PARENT CONTAINER - Flex Desktop */
 .contact_section .parent_div {
     width: 90%;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    justify-content: space-around;
+    gap: 20px;
 }
 
-/* 3. LEFT SECTION (Form) */
+/* LEFT SECTION (Form) */
 .contact_section .parent_div .left_div {
-    flex: 2;
     display: flex;
+    flex: 2;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 .contact_section .parent_div .left_div h3 {
     color: white;
-    margin-bottom: 20px;
 }
 
-/* Corrected selector from left-div to left_div */
 .contact_section .parent_div .left_div form {
     background: #0f1729 !important;
     width: 100%;
@@ -66,39 +63,31 @@ body {
 .contact_section textarea {
     background: #0f1729 !important;
     color: #94a3b8 !important;
-    border: 1px solid #2d3748 !important;
-}
-
-.contact_section .form-control:focus,
-.contact_section .form-select:focus,
-.contact_section textarea:focus {
-    box-shadow: none;
-    border-color: #2eb6d1 !important;
 }
 
 .contact_section .form-control::placeholder,
 .contact_section textarea::placeholder {
     color: #94a3b8 !important;
-    opacity: 0.7 !important;
+    opacity: 1 !important;
 }
 
 .contact_section label {
     color: white !important;
-    margin-bottom: 8px;
 }
 
 .contact_section .btn-primary {
     background: #2eb6d1 !important;
     border-color: #2eb6d1 !important;
-    font-weight: bold;
 }
 
-/* 4. RIGHT SECTION (Info) */
+/* RIGHT SECTION (Info) */
 .contact_section .parent_div .right_div {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    min-width: 380px; /* Desktop minimum width */
+    gap: 20px;
+    padding: 0 20px;
+    min-width: 40%; /* Desktop behavior */
 }
 
 .contact_section .parent_div .right_div .contacts_info_div {
@@ -107,7 +96,6 @@ body {
     flex-direction: column;
     padding: 25px;
     border-radius: 15px;
-    margin-bottom: 20px;
     row-gap: 20px;
 }
 
@@ -116,10 +104,10 @@ body {
     font-weight: bold;
 }
 
-.contact_section .parent_div .right_div .contacts_info_div > div {
+.contact_section .parent_div .right_div .contacts_info_div>div {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .contact_section .parent_div .right_div .contacts_info_div h6 {
@@ -139,7 +127,7 @@ body {
     color: #2eb6d1;
     font-size: 30px;
     background: #ffffff26;
-    padding: 8px;
+    padding: 5px;
     border-radius: 10px;
 }
 
@@ -161,46 +149,31 @@ body {
     list-style: disc;
     color: #94a3b8;
     font-size: 14px;
-    margin-left: 20px;
 }
 
 .contact_section .parent_div .right_div .expects_div ul li::marker {
     color: #2eb6d1;
 }
 
-/* 5. --- THE RESPONSIVE FIX --- */
+/* --- MOBILE RESPONSIVE FIX --- */
 
 @media (max-width: 992px) {
     .contact_section .parent_div {
-        flex-direction: column; /* Stack vertically */
+        flex-direction: column; /* Force stack vertically */
         align-items: center;
-        width: 95%;
+        width: 100%;
         gap: 40px;
     }
 
-    .contact_section .parent_div .left_div,
+    .contact_section .parent_div .left_div, 
     .contact_section .parent_div .right_div {
-        width: 100%;
-        min-width: 0 !important; /* Forces the box to shrink to phone width */
+        width: 95%; /* Adjust width to fit screen */
+        min-width: 0 !important; /* CRITICAL: Remove the 40% constraint */
         padding: 0;
+        flex: none;
     }
 
-    .contact_section .parent_div .right_div .contacts_info_div,
-    .contact_section .parent_div .right_div .expects_div {
-        width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .contact_section {
-        padding: 40px 10px;
-    }
-    
-    .contact_section > h1 {
-        font-size: 1.8rem;
-    }
-
-    .contact_section .parent_div .right_div .contacts_info_div > div {
-        flex-direction: row; /* Keep icons and text side-by-side */
+    .contact_section .parent_div .right_div {
+        margin-top: 20px;
     }
 }
