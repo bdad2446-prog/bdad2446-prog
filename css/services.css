@@ -1,118 +1,205 @@
-/* RESET & BASE */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg: #030507;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.08);
+    --accent: #2eb6d1;
+    --text-dim: #94a3b8;
+    --font-code: 'JetBrains Mono', monospace;
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #070b13;
-    color: #94a3b8;
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.services_wrapper {
+    position: relative;
+    padding: 140px 0 100px;
+}
+
+.ambient-glow {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(46, 182, 209, 0.05) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* HEADER */
+.services_header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.badge_code {
+    font-family: var(--font-code);
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.services_header h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.text_gradient {
+    background: linear-gradient(90deg, #fff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* BENTO GRID */
+.bento_services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.bento_card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translateY(30px);
+    backdrop-filter: blur(10px);
+}
+
+.bento_card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bento_card:hover {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.02);
+}
+
+/* BENTO SIZING */
+.large_feature {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.medium_feature {
+    grid-column: span 1;
+}
+
+.small_feature {
+    grid-column: span 1;
+}
+
+.icon_box {
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.bento_card h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.bento_card p {
+    color: var(--text-dim);
     line-height: 1.6;
 }
 
-/* SERVICES SECTION */
-.services_section {
-    min-height: 80vh;
-    padding: 80px 5%;
+/* SPECIAL LIST IN LARGE CARD */
+.feature_list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature_list li {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: #fff;
+    background: rgba(46, 182, 209, 0.1);
+    padding: 8px 16px;
+    border-radius: 100px;
+}
+
+.feature_list span {
+    color: var(--accent);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* CTA BOX */
+.cta_bento {
+    background: linear-gradient(145deg, rgba(46, 182, 209, 0.05), transparent);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 80px 40px;
     text-align: center;
 }
 
-.services_section>h2 {
-    color: white;
+.cta_inner h2 {
     font-weight: 800;
-    /* Scales between 1.8rem and 2.5rem based on screen size */
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.services_section>p {
-    color: #94a3b8;
+.cta_inner p {
+    color: var(--text-dim);
     max-width: 600px;
-    margin-bottom: 50px;
+    margin: 0 auto 40px;
 }
 
-/* CARDS GRID SYSTEM */
-.services_section .carts_div {
-    width: 100%;
-    max-width: 1200px;
-    display: grid;
-    /* Magic line: creates columns that wrap automatically at 300px */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.services_section .carts_div div {
-    padding: 40px 25px;
-    border-radius: 24px;
-    background: #0f1529;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    display: flex;
-    flex-direction: column;
+.architect_btn {
+    display: inline-flex;
     align-items: center;
-}
-
-.services_section .carts_div div:hover {
-    transform: translateY(-10px);
-    background: #161e36;
-    border-color: #2eb6d1;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.services_section .carts_div .material-symbols-outlined {
-    color: #2eb6d1;
-    background: rgba(46, 182, 209, 0.1);
-    padding: 15px;
-    font-size: 45px;
-    border-radius: 18px;
-    margin-bottom: 15px;
-}
-
-.services_section .carts_div h3 {
-    color: white;
+    gap: 12px;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 16px 35px;
+    border-radius: 12px;
     font-weight: 700;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+    transition: 0.3s;
 }
 
-/* SPECIFIC DIV (CTA BOX) */
-.specific_div {
-    width: 100%;
-    max-width: 1000px;
-    padding: 60px 40px;
-    background: linear-gradient(145deg, #0f1529, #070b13);
-    border: 1px dashed rgba(46, 182, 209, 0.3);
-    border-radius: 24px;
-    margin: 10px auto;
+.architect_btn:hover {
+    background: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(46, 182, 209, 0.3);
 }
 
-.specific_div h2 {
-    color: white;
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    margin-bottom: 15px;
-}
-
-/* MOBILE RESPONSIVE OVERRIDES */
-@media (max-width: 768px) {
-
-    /* 1. Add space between the grid of cards and the specific_div */
-    .services_section .carts_div {
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .bento_services {
         grid-template-columns: 1fr;
-        gap: 20px;
-        margin-bottom: 50px;
-        /* Forces space below the last card */
     }
 
-    /* 2. Add extra top margin to the specific_div for mobile only */
-    .specific_div {
-        margin-top: 30px !important;
-        padding: 40px 20px;
-        width: 100%;
+    .large_feature,
+    .medium_feature,
+    .small_feature {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .feature_list {
+        flex-direction: column;
+        gap: 10px;
     }
 }
