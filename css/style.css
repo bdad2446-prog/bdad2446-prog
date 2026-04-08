@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #070b13;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.material-symbols-outlined {
+    font-size: 26px;
+    color: #2eb6d1;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header */
+.header_section {
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header_section .title_div {
+    color: #2eb6d1;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header_section nav a {
+    color: white;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.header_section nav a:hover {
+    color: #2eb6d1;
+}
+
+/* Hero */
+.hero_section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero_content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero_section h1 {
+    font-size: 3rem;
+    color: #2eb6d1;
+    margin-bottom: 15px;
+}
+
+.hero_section h4 {
+    font-size: 1.3rem;
+    color: #00c0ff;
+    margin-bottom: 25px;
+}
+
+.hero_section .buttons_div button {
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #2eb6d1;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #2293aa;
+}
+
+.btn-success {
+    background: #20c997;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #198f6d;
+}
+
+/* Why Section */
+.why_section {
+    background: #091725;
+    padding: 80px 0;
+}
+
+.why_section h2 {
+    font-size: 2.5rem;
+    color: #2eb6d1;
+    margin-bottom: 10px;
+}
+
+.why_section h5 {
+    color: #94a3b8;
+    margin-bottom: 50px;
+}
+
+.why_card {
+    background: #0f1529;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.why_card:hover {
+    transform: translateY(-5px);
+    background: rgba(46, 182, 209, 0.1);
+}
+
+.why_card h3 {
+    margin: 20px 0;
+    color: white;
+}
+
+.why_card p {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* Portfolio */
+.portfolio_section {
+    padding: 80px 0;
+    background: #070b13;
+}
+
+.portfolio_card {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.portfolio_card:hover {
+    transform: translateY(-5px);
+    background: rgba(46, 182, 209, 0.1);
+}
+
+.portfolio_card h4 {
+    color: #2eb6d1;
+    margin-top: 15px;
+}
+
+.portfolio_card p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer_section {
+    background: #0a1826;
+    padding: 50px 15px;
+    color: #797c7f;
+}
+
+.footer_section .title_div {
+    color: #2eb6d1;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer_section a {
+    color: #797c7f;
+    transition: 0.3s;
+}
+
+.footer_section a:hover {
+    color: #2eb6d1;
+}
+
+.footer_section i {
+    font-size: 20px;
+    margin: 5px;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+    .hero_section h1 {
+        font-size: 2rem;
+    }
+
+    .hero_section h4 {
+        font-size: 1rem;
+    }
+
+    .hero_section .buttons_div {
+        flex-direction: column;
+    }
+
+    .why_section .row {
+        flex-direction: column;
+    }
+
+    .portfolio_section .row {
+        flex-direction: column;
+    }
+
+    .header_section {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
