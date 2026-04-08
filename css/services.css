@@ -22,15 +22,15 @@ body {
     text-align: center;
 }
 
-.services_section > h2 {
+.services_section>h2 {
     color: white;
     font-weight: 800;
     /* Scales between 1.8rem and 2.5rem based on screen size */
-    font-size: clamp(1.8rem, 5vw, 2.5rem); 
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     margin-bottom: 10px;
 }
 
-.services_section > p {
+.services_section>p {
     color: #94a3b8;
     max-width: 600px;
     margin-bottom: 50px;
@@ -89,7 +89,7 @@ body {
     background: linear-gradient(145deg, #0f1529, #070b13);
     border: 1px dashed rgba(46, 182, 209, 0.3);
     border-radius: 24px;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .specific_div h2 {
@@ -100,22 +100,17 @@ body {
 
 /* MOBILE RESPONSIVE OVERRIDES */
 @media (max-width: 768px) {
-    .services_section {
-        padding: 50px 20px;
-    }
-
+    /* 1. Add space between the grid of cards and the specific_div */
     .services_section .carts_div {
-        grid-template-columns: 1fr; /* Force 1 column on tablets/phones */
+        grid-template-columns: 1fr;
         gap: 20px;
+        margin-bottom: 50px; /* Forces space below the last card */
     }
 
+    /* 2. Add extra top margin to the specific_div for mobile only */
     .specific_div {
+        margin-top: 30px; 
         padding: 40px 20px;
         width: 100%;
-    }
-
-    /* Prevent text "widows" from <br> tags on mobile */
-    .specific_div br {
-        display: none;
     }
 }
