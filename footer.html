@@ -1,13 +1,11 @@
 <section class="footer_section">
     <div class="about_div">
-        <div id="title_div" class="title_div">
-
-            <span class="material-symbols-outlined">code_xml</span><a href="index.html">
-                BaghdadDevLab
-            </a>
+        <div class="title_div">
+            <span class="material-symbols-outlined">code_xml</span>
+            <a href="index.html">BaghdadDevLab</a>
         </div>
-        <p>
-            Professional Python development services specializing in <br>
+        <p class="tagline">
+            Professional Python development services specializing in
             automation, desktop applications, and code optimization.
         </p>
     </div>
@@ -44,67 +42,62 @@
     <p class="copyrights">© 2026 Baghdad DevLab. All rights reserved.</p>
 
     <style>
-        /* Footer Section CSS */
         .footer_section {
-            padding: 50px 15px 20px 15px;
-            gap: 40px;
-            width: 100%;
-            background: #0a1826eb;
+            padding: 60px 10% 30px 10%;
+            background: #0a1826;
+            /* Solid professional dark blue */
             color: white;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
-            position: relative;
+            gap: 40px;
         }
 
-        .footer_section .about_div .title_div {
+        .footer_section .title_div {
             display: flex;
             align-items: center;
-            font-weight: bolder;
+            gap: 10px;
+            font-weight: 700;
             color: #2eb6d1;
             margin-bottom: 20px;
         }
 
-        .footer_section .about_div .title_div a {
+        .footer_section .title_div a {
             text-decoration: none;
+            color: inherit;
+            font-size: 1.4rem;
+        }
+
+        .footer_section .tagline {
+            color: #a0a4a8;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer_section h6 {
             color: #2eb6d1;
-        }
-
-        .footer_section .about_div p {
-            color: #797c7f;
-            font-size: 12px;
-        }
-
-        .footer_section .links_div,
-        .footer_section .contacts_div {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .footer_section .links_div h6,
-        .footer_section .contacts_div h6 {
-            color: #2eb6d1;
-            margin-bottom: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         .footer_section .links_nav,
         .footer_section .contacts_nav {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .footer_section .links_nav a,
-        .footer_section .contacts_nav a {
-            color: #797c7f;
+        .footer_section a {
+            color: #a0a4a8;
             text-decoration: none;
             font-size: 14px;
-            transition: 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .footer_section .links_nav a:hover,
-        .footer_section .contacts_nav a:hover {
+        .footer_section a:hover {
             color: #2eb6d1;
         }
 
@@ -114,51 +107,57 @@
             gap: 10px;
         }
 
-        .footer_section .contacts_nav .flag {
-            width: 20px;
-            border-radius: 3px;
+        .footer_section .flag {
+            width: 18px;
+            height: auto;
+            border-radius: 2px;
         }
 
         .footer_section .social_links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
+            margin-top: 15px;
         }
 
-        .footer_section .social_links a i {
-            font-size: 22px;
-            color: #797c7f;
-            transition: 0.3s;
-        }
-
-        .footer_section .social_links a:hover i {
-            color: #2eb6d1;
+        .footer_section .social_links i {
+            font-size: 24px;
         }
 
         .footer_section .copyrights {
-            color: #797c7f;
-            font-size: 12px;
-            font-weight: lighter;
             width: 100%;
             text-align: center;
-            margin-top: 20px;
+            padding-top: 40px;
+            border-top: 1px solid #1a2a3a;
+            color: #797c7f;
+            font-size: 12px;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
+        /* Responsive Breakpoint */
+        @media (max-width: 768px) {
             .footer_section {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                padding: 50px 20px 20px 20px;
             }
 
-            .footer_section .about_div,
-            .footer_section .links_div,
-            .footer_section .contacts_div {
-                width: 100%;
+            .footer_section .about_div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer_section .contacts_nav a {
+                justify-content: center;
+                /* Centers icons with text on mobile */
             }
 
             .footer_section .social_links {
                 justify-content: center;
+            }
+
+            .footer_section .tagline {
+                max-width: 100%;
             }
         }
     </style>
