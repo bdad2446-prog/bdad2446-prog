@@ -1,98 +1,132 @@
+/* ABOUT SECTION BASE */
 .about_section {
     min-height: 100vh;
-    padding: 30px 0;
+    padding: 80px 5%; /* Increased padding for professional breathing room */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
     background: #070b13;
+    color: #94a3b8;
 }
 
-.about_section>h1 {
+.about_section > h1 {
     color: white;
-    font-weight: bolder;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
 }
 
 /* Parent container */
 .about_section .parent_div {
-    width: 90%;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start; /* Align content to top */
+    gap: 40px;
 }
 
-/* Left section */
-.about_section .left_section {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex: 1;
-    width: 50%;
-    gap: 20px;
-}
-
-.about_section .left_section h3 {
-    color: white;
-    font-weight: bolder;
-}
-
-.about_section .left_section .intro {
-    display: flex;
-    flex-direction: column;
-}
-
-.about_section .left_section .intro p {
-    color: #94a3b8;
-    font-size: 14px;
-}
-
-/* Right section */
+/* Shared Section Styles (Left & Right) */
+.about_section .left_section,
 .about_section .right_section {
+    flex: 1; /* Distributes space equally without needing width: 50% */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex: 1;
-    width: 50%;
-    gap: 20px;
+    gap: 25px;
 }
 
-.about_section .right_section h3 {
+.about_section h3 {
     color: white;
-    font-weight: bolder;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
 }
 
+/* Add a subtle accent line under headings */
+.about_section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #2eb6d1;
+    border-radius: 2px;
+}
+
+/* Left Section Content */
+.about_section .left_section .intro p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Right Section Content */
 .about_section .right_section .lists_div {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap; /* Allows lists to stack on smaller tablets */
+    gap: 30px;
+}
+
+.about_section .right_section .lists_div ul {
+    padding: 0;
+    margin: 0;
 }
 
 .about_section .right_section .lists_div ul li {
     list-style: none;
     display: flex;
     align-items: center;
+    margin-bottom: 12px;
 }
 
 .about_section .right_section .lists_div ul li .material-symbols-outlined {
     color: #2eb6d1;
-    font-size: 25px;
-    margin-right: 8px;
+    font-size: 22px;
+    margin-right: 12px;
+    background: rgba(46, 182, 209, 0.1);
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .about_section .right_section .lists_div ul li p {
-    color: #94a3b8;
-    font-size: 14px;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
-/* Mobile screens */
+/* MOBILE RESPONSIVE OVERRIDES */
+@media (max-width: 992px) {
+    .about_section .parent_div {
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
+    .about_section {
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
     .about_section .parent_div {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Better for reading text */
     }
 
     .about_section .left_section,
     .about_section .right_section {
         width: 100%;
+    }
+
+    /* Center the main title on mobile */
+    .about_section h3::after {
+        left: 0; /* Keeps the accent line aligned with text */
+    }
+
+    .about_section .right_section .lists_div {
+        flex-direction: column;
+        gap: 10px;
     }
 }
