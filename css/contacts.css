@@ -1,163 +1,194 @@
-/* CONTACT SECTION BASE */
-.contact_section {
-    min-height: 100vh;
-    padding: 80px 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background: #070b13;
 }
 
-.contact_section > h1 {
-    color: white;
-    font-weight: 800;
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
-}
-
-.contact_section > h3 {
-    color: #94a3b8;
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Parent container */
-.contact_section .parent_div {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-/* Left Section (Form) */
-.contact_section .parent_div .left_div {
-    flex: 1.5; /* Takes more space than the info boxes */
+.contact_section {
+    min-height: 100vh;
+    padding: 30px 0;
     display: flex;
     flex-direction: column;
+    /* Changed from center to flex-start for mobile scrollability */
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 30px;
+}
+
+.contact_section>h1 {
+    color: white;
+    font-weight: bolder;
+}
+
+.contact_section>h3 {
+    color: #94a3b8;
+}
+
+.contact_section .parent_div {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
     gap: 20px;
+}
+
+/* LEFT SECTION */
+.contact_section .parent_div .left_div {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px;
 }
 
 .contact_section .parent_div .left_div h3 {
     color: white;
-    font-weight: 700;
-    margin-bottom: 10px;
 }
 
-/* Form Styling */
+.contact_section .parent_div .left-div form {
+    background: #0f1729 !important;
+    width: 100%;
+    padding: 0;
+}
+
 .contact_section .form-control,
 .contact_section .form-select,
 .contact_section textarea {
     background: #0f1729 !important;
-    color: #e2e8f0 !important;
-    border: 1px solid #1e293b !important;
-    padding: 12px 15px;
-    transition: 0.3s;
+    color: #94a3b8 !important;
 }
 
-/* Focus effect for a "Pro" feel */
-.contact_section .form-control:focus,
-.contact_section textarea:focus {
-    border-color: #2eb6d1 !important;
-    box-shadow: 0 0 0 0.25rem rgba(46, 182, 209, 0.25) !important;
-    outline: none;
+.contact_section .form-control::placeholder,
+.contact_section textarea::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
 }
 
 .contact_section label {
-    color: #cbd5e1 !important;
-    margin-bottom: 8px;
-    font-weight: 500;
+    color: white !important;
 }
 
 .contact_section .btn-primary {
     background: #2eb6d1 !important;
-    border: none !important;
-    padding: 12px 30px;
-    font-weight: bold;
-    transition: 0.3s;
+    border-color: #2eb6d1 !important;
 }
 
-.contact_section .btn-primary:hover {
-    background: #249cb4 !important;
-    transform: translateY(-2px);
-}
-
-/* Right Section (Info Boxes) */
+/* RIGHT SECTION */
 .contact_section .parent_div .right_div {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px;
+    min-width: 40%;
+    height: 100%;
+}
+
+.contact_section .parent_div .right_div .contacts_info_div {
+    background: #1d283a;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    row-gap: 20px;
 }
 
-.contact_section .contacts_info_div,
-.contact_section .expects_div {
-    background: #0f1729; /* Matched to form background */
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.contact_section .contacts_info_div h4,
-.contact_section .expects_div h4 {
+.contact_section .parent_div .right_div .contacts_info_div h4 {
     color: white;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.contact_section .info_item {
+.contact_section .parent_div .right_div .contacts_info_div>div {
     display: flex;
+    width: 90%;
+    justify-content: flex-start;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 10px;
 }
 
-.contact_section .info_item .material-symbols-outlined {
-    color: #2eb6d1;
-    font-size: 28px;
-    background: rgba(46, 182, 209, 0.1);
-    padding: 8px;
-    border-radius: 12px;
-}
-
-.contact_section .info_text h6 {
+.contact_section .parent_div .right_div .contacts_info_div>div>div h6 {
     color: white;
     margin: 0;
-    font-size: 0.95rem;
 }
 
-.contact_section .info_text a,
-.contact_section .info_text p {
+.contact_section .parent_div .right_div .contacts_info_div>div>div a {
     color: #94a3b8;
-    font-size: 0.9rem;
+    font-size: 14px;
     text-decoration: none;
 }
 
-/* MOBILE RESPONSIVE OVERRIDES */
+.contact_section .parent_div .right_div .contacts_info_div>div>div p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 0;
+}
+
+.contact_section .parent_div .right_div .contacts_info_div .material-symbols-outlined {
+    color: #2eb6d1;
+    font-size: 30px;
+    background: #ffffff26;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.contact_section .parent_div .right_div .expects_div {
+    background: #1d283a;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    row-gap: 20px;
+}
+
+.contact_section .parent_div .right_div .expects_div h4 {
+    color: white;
+    font-weight: bold;
+}
+
+.contact_section .parent_div .right_div .expects_div ul li {
+    list-style: disc;
+    color: #94a3b8;
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+.contact_section .parent_div .right_div .expects_div ul li::marker {
+    color: #2eb6d1;
+}
+
+/* MOBILE RESPONSIVE FIX (KEEPING COLORS) */
 @media (max-width: 992px) {
-    .contact_section .parent_div {
-        flex-direction: column; /* Stack vertically on tablets/phones */
-        gap: 50px;
+    .contact_section {
+        justify-content: flex-start;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
-    .contact_section .parent_div .left_div,
+    .contact_section .parent_div {
+        flex-direction: column;
+        width: 95%;
+        /* This gap forces the space between the form and the side info boxes */
+        gap: 60px !important; 
+    }
+
+    .contact_section .parent_div .left_div, 
     .contact_section .parent_div .right_div {
         width: 100%;
         padding: 0;
+        flex: none;
     }
-
-    /* On mobile, show the contact info BEFORE the form 
-       so they can see quick contact options immediately */
-    .contact_section .parent_div {
-        display: flex;
-        flex-direction: column-reverse; 
-    }
-}
-
-@media (max-width: 768px) {
-    .contact_section {
-        padding: 60px 20px;
+    
+    /* Pushes the info boxes down specifically on mobile */
+    .contact_section .parent_div .right_div {
+        margin-top: 40px; 
     }
 }
