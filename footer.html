@@ -1,159 +1,203 @@
 <section class="footer_section">
-    <div class="about_div">
-        <div class="title_div">
-            <span class="material-symbols-outlined">code_xml</span>
-            <a href="index.html">BaghdadDevLab</a>
+    <div class="footer_container">
+        <div class="about_div">
+            <div class="title_div">
+                <span class="material-symbols-outlined">terminal</span>
+                <a href="index.html">BaghdadDevLab</a>
+            </div>
+            <p class="tagline">
+                Engineering high-performance Python solutions with architectural precision. Specializing in automation and industrial-grade scraping.
+            </p>
+            <div class="social_links">
+                <a href="https://github.com/bdad2446-prog" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://wa.me/213540525486" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
         </div>
-        <p class="tagline">
-            Professional Python development services specializing in
-            automation, desktop applications, and code optimization.
-        </p>
+
+        <div class="links_group">
+            <div class="links_div">
+                <h6>// Navigation</h6>
+                <nav class="links_nav">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="about.html">About</a>
+                    <a href="contacts.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="contacts_div">
+                <h6>// Connect</h6>
+                <nav class="contacts_nav">
+                    <a href="mailto:bdad2446@gmail.com">
+                        <span class="material-symbols-outlined">mail</span>
+                        bdad2446@gmail.com
+                    </a>
+                    <div class="location_pill">
+                        <span class="material-symbols-outlined">public</span>
+                        Algeria <img class="flag" src="https://flagcdn.com/w40/dz.png" alt="Algeria Flag">
+                    </div>
+                </nav>
+            </div>
+        </div>
     </div>
 
-    <div class="links_div">
-        <h6>Quick links</h6>
-        <nav class="links_nav">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="about.html">About</a>
-            <a href="contacts.html">Contact</a>
-        </nav>
+    <div class="copyright_bar">
+        <p>© 2026 BaghdadDevLab. <span class="dim">All systems operational.</span></p>
     </div>
-
-    <div class="contacts_div">
-        <h6>Contacts</h6>
-        <nav class="contacts_nav">
-            <a href="mailto:bdad2446@gmail.com">
-                <span class="material-symbols-outlined">mail</span>
-                bdad2446@gmail.com
-            </a>
-            <a class="location" href="#home">
-                <span class="material-symbols-outlined">public</span>
-                Algeria <img class="flag" src="https://flagcdn.com/w40/dz.png" alt="Algeria Flag">
-            </a>
-        </nav>
-        <span class="social_links">
-            <a href="https://github.com/bdad2446-prog" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://wa.me/213540525486" target="_blank"><i class="bi bi-whatsapp"></i></a>
-        </span>
-    </div>
-
-    <p class="copyrights">© 2026 Baghdad DevLab. All rights reserved.</p>
 
     <style>
         .footer_section {
-            padding: 60px 10% 30px 10%;
-            background: #0a1826;
-            /* Solid professional dark blue */
+            padding: 100px 8% 40px 8%;
+            background: #030507; /* Unified architect black */
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: white;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
+            position: relative;
+            overflow: hidden;
         }
 
+        .footer_container {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        /* Branding */
         .footer_section .title_div {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 700;
+            gap: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .footer_section .title_div span {
             color: #2eb6d1;
-            margin-bottom: 20px;
+            font-size: 24px;
         }
 
         .footer_section .title_div a {
             text-decoration: none;
             color: inherit;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
         }
 
         .footer_section .tagline {
-            color: #a0a4a8;
-            font-size: 14px;
-            line-height: 1.6;
-            max-width: 300px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 360px;
+            margin-bottom: 30px;
+        }
+
+        /* Grouping for Flex */
+        .links_group {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
         }
 
         .footer_section h6 {
             color: #2eb6d1;
-            font-size: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            opacity: 0.8;
         }
 
         .footer_section .links_nav,
         .footer_section .contacts_nav {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
         }
 
         .footer_section a {
-            color: #a0a4a8;
+            color: #94a3b8;
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
         .footer_section a:hover {
-            color: #2eb6d1;
+            color: #fff;
+            transform: translateX(5px);
         }
 
-        .footer_section .contacts_nav a {
+        .footer_section .contacts_nav a, 
+        .footer_section .location_pill {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
 
         .footer_section .flag {
             width: 18px;
             height: auto;
             border-radius: 2px;
+            filter: grayscale(0.2);
         }
 
+        /* Socials */
         .footer_section .social_links {
             display: flex;
-            gap: 20px;
-            margin-top: 15px;
+            gap: 15px;
         }
 
-        .footer_section .social_links i {
-            font-size: 24px;
+        .footer_section .social_links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #fff;
         }
 
-        .footer_section .copyrights {
-            width: 100%;
-            text-align: center;
+        .footer_section .social_links a:hover {
+            background: rgba(46, 182, 209, 0.1);
+            border-color: #2eb6d1;
+            color: #2eb6d1;
+            transform: translateY(-3px);
+        }
+
+        /* Copyright Bar */
+        .copyright_bar {
             padding-top: 40px;
-            border-top: 1px solid #1a2a3a;
-            color: #797c7f;
-            font-size: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #475569;
+            font-size: 0.8rem;
+        }
+
+        .copyright_bar .dim {
+            margin-left: 10px;
+            color: #1e293b;
         }
 
         /* Responsive Breakpoint */
-        @media (max-width: 768px) {
-            .footer_section {
+        @media (max-width: 900px) {
+            .footer_container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .links_group {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 50px 20px 20px 20px;
-            }
-
-            .footer_section .about_div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer_section .contacts_nav a {
-                justify-content: center;
-                /* Centers icons with text on mobile */
-            }
-
-            .footer_section .social_links {
-                justify-content: center;
+                gap: 40px;
             }
 
             .footer_section .tagline {
