@@ -60,7 +60,7 @@ body {
     background: #0f1729 !important;
     width: 100%;
     padding: 20px !important;
-    border-radius: 20px;
+    border-radius: 20px !important;
 }
 
 .contact_section .form-control,
