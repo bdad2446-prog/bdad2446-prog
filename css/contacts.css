@@ -9,7 +9,6 @@ body {
     font-family: Arial, sans-serif;
     background: #070b13;
     overflow-x: hidden;
-    /* Stops side-scrolling on phones */
 }
 
 .contact_section {
@@ -42,12 +41,11 @@ body {
     gap: 20px;
 }
 
-/* LEFT SECTION (Form) */
+/* LEFT SECTION (Form Container) */
 .contact_section .parent_div .left_div {
     display: flex;
     flex: 2;
     flex-direction: column;
-    justify-content: space-around;
     padding: 0 20px;
 }
 
@@ -56,11 +54,13 @@ body {
     margin-bottom: 15px;
 }
 
+/* THE FORM ITSELF - Padding & Radius lives here */
 .contact_section .parent_div .left_div form {
     background: #0f1729 !important;
     width: 100%;
-    padding: 20px !important;
-    border-radius: 20px !important;
+    padding: 30px !important; /* Increased padding for better look */
+    border-radius: 20px !important; /* Forced radius */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Makes radius visible against dark bg */
 }
 
 .contact_section .form-control,
@@ -69,22 +69,25 @@ body {
     background: #0f1729 !important;
     color: #94a3b8 !important;
     border: 1px solid #2d3748 !important;
+    padding: 10px;
 }
 
 .contact_section .form-control::placeholder,
 .contact_section textarea::placeholder {
     color: #94a3b8 !important;
-    opacity: 1 !important;
+    opacity: 0.6 !important;
 }
 
 .contact_section label {
     color: white !important;
+    margin-top: 10px;
 }
 
 .contact_section .btn-primary {
     background: #2eb6d1 !important;
     border-color: #2eb6d1 !important;
     font-weight: bold;
+    margin-top: 15px;
 }
 
 /* RIGHT SECTION (Info) */
@@ -92,82 +95,62 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: space-around;
     padding: 0 20px;
     min-width: 40%;
-    height: 100%;
 }
 
-.contact_section .parent_div .right_div .contacts_info_div {
+.contact_section .parent_div .right_div .contacts_info_div,
+.contact_section .parent_div .right_div .expects_div {
     background: #1d283a;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 20px; /* Matched radius to the form */
     margin-bottom: 20px;
-    row-gap: 20px;
 }
 
-.contact_section .parent_div .right_div .contacts_info_div h4 {
+.contact_section .parent_div .right_div .contacts_info_div h4,
+.contact_section .parent_div .right_div .expects_div h4 {
     color: white;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .contact_section .parent_div .right_div .contacts_info_div>div {
     display: flex;
     width: 100%;
-    justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-.contact_section .parent_div .right_div .contacts_info_div>div>div h6 {
+.contact_section .parent_div .right_div .contacts_info_div h6 {
     color: white;
     margin: 0;
 }
 
-.contact_section .parent_div .right_div .contacts_info_div>div>div a {
+.contact_section .parent_div .right_div .contacts_info_div a,
+.contact_section .parent_div .right_div .contacts_info_div p {
     color: #94a3b8;
     font-size: 14px;
     text-decoration: none;
-}
-
-.contact_section .parent_div .right_div .contacts_info_div>div>div p {
-    color: #94a3b8;
-    font-size: 14px;
     margin: 0;
 }
 
 .contact_section .parent_div .right_div .contacts_info_div .material-symbols-outlined {
     color: #2eb6d1;
     font-size: 30px;
-    background: #ffffff26;
-    padding: 5px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 12px;
 }
 
-.contact_section .parent_div .right_div .expects_div {
-    background: #1d283a;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    row-gap: 20px;
-}
-
-.contact_section .parent_div .right_div .expects_div h4 {
-    color: white;
-    font-weight: bold;
+.contact_section .parent_div .right_div .expects_div ul {
+    padding-left: 20px;
 }
 
 .contact_section .parent_div .right_div .expects_div ul li {
-    list-style: disc;
     color: #94a3b8;
-    font-weight: lighter;
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .contact_section .parent_div .right_div .expects_div ul li::marker {
@@ -180,27 +163,28 @@ body {
     .contact_section {
         padding: 40px 0;
         justify-content: flex-start;
-        /* Better for vertical scroll */
     }
 
-    /* FORCING COLUMN DIRECTION */
     .contact_section .parent_div {
-        flex-direction: column;
+        flex-direction: column !important; /* FORCED COLUMN */
         align-items: center;
         width: 100%;
-        gap: 40px;
+        gap: 30px;
     }
 
     .contact_section .parent_div .left_div,
     .contact_section .parent_div .right_div {
-        width: 90%;
+        width: 92%; /* Takes most of screen width */
         min-width: 0 !important;
-        /* CRITICAL: Allows boxes to shrink on phones */
         flex: none;
-        padding: 0;
+        padding: 0; /* Removing div padding to let Form padding show */
+    }
+
+    .contact_section .parent_div .left_div form {
+        padding: 20px !important; /* Ensuring form padding stays on mobile */
     }
 
     .contact_section .parent_div .right_div {
-        margin-top: 20px;
+        margin-top: 10px;
     }
 }
