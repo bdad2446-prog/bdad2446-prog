@@ -4,94 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | BaghdadDevLab</title>
+    <title>Engineer | BaghdadDevLab</title>
 
-    <!-- Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/about.css">
 </head>
 
 <body>
-    <!-- Header -->
+
     <div id="header"></div>
 
-    <!-- About Section -->
-    <section class="about_section">
-        <h1>About Me</h1>
+    <main class="about_wrapper">
+        <div class="ambient-glow"></div>
 
-        <div class="parent_div">
+        <div class="container">
+            <header class="about_header">
+                <div class="badge_code">// BIOGRAPHY_ROOT</div>
+                <h1>The <span class="text_gradient">Architect</span> behind the code</h1>
+            </header>
 
-            <section class="left_section">
-                <h3>Professional Python development</h3>
-                <div class="intro">
-                    <p>
-                        I'm Baghdad, a Python developer focused on building automation tools,
-                        desktop applications, and smart solutions that simplify real-world problems.
-                    </p>
+            <div class="parent_grid">
+                <section class="bio_content">
+                    <div class="terminal_window">
+                        <div class="terminal_header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal_title">bio.py</span>
+                        </div>
+                        <div class="terminal_body">
+                            <p class="highlight">I build tools that bridge the gap between complex data and simple user
+                                experiences.</p>
+                            <p>My focus is on <strong>Python Synthesis</strong>—taking manual, repetitive business
+                                processes and distilling them into high-performance automated systems.</p>
+                            <p>As a developer, I believe software should be invisible; it should work perfectly in the
+                                background so you can focus on what actually matters.</p>
+                        </div>
+                    </div>
+                </section>
 
-                    <p>
-                        I specialize in creating efficient systems that save time, reduce manual work,
-                        and improve productivity for individuals and businesses.
-
-                    </p>
-
-                    <p>
-                        My work includes projects like automation scripts, file management tools,
-                        data extraction systems, and custom desktop applications designed for practical use.
-                    </p>
-                </div>
-            </section>
-
-            <section class="right_section">
-
-                <h3>Technical skills</h3>
-                <div class="lists_div">
-                    <ul class="l_ul">
-                        <li><span class="material-symbols-outlined">check_circle</span>
-                            <p>Python 3.x</p>
-                        </li>
-                        <li><span class="material-symbols-outlined">check_circle</span>
-                            <p>PyQt5 & Tkinter</p>
-                        </li>
-                        <li><span class="material-symbols-outlined">check_circle</span>
-                            <p>Pytest</p>
-                        </li>
-                        <li><span class="material-symbols-outlined">check_circle</span>
-                            <p>Git & GitHub</p>
-                        </li>
-                    </ul>
-                    <ul class=r_ul">
-                        <li><span class="material-symbols-outlined">check_circle</span>
-                            <p>Pandas & NumPy</p>
-                        </li>
-                        <li><span class="material-symbols-outlined">check_circle</span>
-                            <p>Python 3.x</p>
-                        </li>
-                        <li><span class="material-symbols-outlined">check_circle</span>
-                            <p>REST APIs</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
+                <section class="tech_specs">
+                    <div class="spec_card">
+                        <h6>// TECH_STACK</h6>
+                        <div class="skill_grid">
+                            <div class="skill_item">
+                                <span class="material-symbols-outlined">terminal</span>
+                                <span>Python 3.12+</span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="material-symbols-outlined">layers</span>
+                                <span>PyQt & Tkinter</span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="material-symbols-outlined">database</span>
+                                <span>Pandas & NumPy</span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="material-symbols-outlined">cloud_sync</span>
+                                <span>REST Integration</span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="material-symbols-outlined">account_tree</span>
+                                <span>Git Control</span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="material-symbols-outlined">precision_manufacturing</span>
+                                <span>Web Scraping</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-    </section>
-    <!-- Footer -->
+    </main>
+
     <div id="footer"></div>
 
-    <!-- Load Header/Footer -->
     <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('header').innerHTML = data);
-
-        fetch('footer.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('footer').innerHTML = data);
+        fetch('header.html').then(r => r.text()).then(d => document.getElementById('header').innerHTML = d);
+        fetch('footer.html').then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d);
     </script>
 </body>
 
