@@ -59,7 +59,7 @@ body {
 .contact_section .parent_div .left_div form {
     background: #0f1729 !important;
     width: 100%;
-    padding: 20px;
+    padding: 20px !important;
     border-radius: 20px;
 }
 
