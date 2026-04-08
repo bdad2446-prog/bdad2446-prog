@@ -100,16 +100,18 @@ body {
 
 /* MOBILE RESPONSIVE OVERRIDES */
 @media (max-width: 768px) {
+
     /* 1. Add space between the grid of cards and the specific_div */
     .services_section .carts_div {
         grid-template-columns: 1fr;
         gap: 20px;
-        margin-bottom: 50px; /* Forces space below the last card */
+        margin-bottom: 50px;
+        /* Forces space below the last card */
     }
 
     /* 2. Add extra top margin to the specific_div for mobile only */
     .specific_div {
-        margin-top: 30px; 
+        margin-top: 30px !important;
         padding: 40px 20px;
         width: 100%;
     }
