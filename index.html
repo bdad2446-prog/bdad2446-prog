@@ -1,135 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BaghdadDevLab | Python Craftsmanship</title>
+    <title>BaghdadDevLab | Quantum Python Automation</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Orbitron:wght@400;900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-
-<link rel="icon" type="image/png" href="assets/logo.png">
-
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 </head>
+
 <body>
 
-    <div id="header"></div>
+    <div class="hud-top">SYSTEM_STATUS: <span class="blink">STABLE</span> // ADDR: 192.168.1.104</div>
+    <div class="hud-bottom">EST_SCRAPE_TIME: 0.004s // LOAD: 14%</div>
 
     <section id="hero" class="hero_section">
-        <canvas id="particles"></canvas>
-        <div class="grid-overlay"></div>
-
-        <div class="dev-shape wireframe-bracket">{ }</div>
-        <div class="dev-shape wireframe-tag">&lt; / &gt;</div>
-        <div class="dev-shape binary-stream">01011001</div>
-        <div class="dev-shape terminal-window">
-            <div class="t-bar"><span></span><span></span><span></span></div>
-        </div>
+        <canvas id="matrix-canvas"></canvas>
+        <div class="grid-mesh"></div>
+        <div class="vignette"></div>
 
         <div class="hero_content">
-            <div class="status-badge"><span></span> System: Ready to Automate</div>
-            <h1>I Build Python Automation Tools That <span class="glitch-text">Save You Hours</span></h1>
-            <h4>Custom scripts, data scraping, and desktop tools tailored to your needs.</h4>
-            
-            <div class="typing-container">
-                <span class="prompt">>>></span> <span class="typing-text"></span>
+            <div class="glitch-container">
+                <h1 class="glitch" data-text="BAGHDAD_DEV_LAB">BAGHDAD_DEV_LAB</h1>
             </div>
 
-            <div class="buttons_div">
-                <button class="btn btn-dev-primary" onclick="window.location.href='portfolio.html'">Explore Projects</button>
-                <button class="btn btn-dev-outline" onclick="window.location.href='contacts.html'">Initiate Project</button>
+            <div class="architecture-label">
+                <span class="bracket">[</span>
+                ARCHITECTING AUTOMATION
+                <span class="bracket">]</span>
+            </div>
+
+            <div class="console-box">
+                <div class="console-header">
+                    <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+                    <div class="tab">python_kernel.exe</div>
+                </div>
+                <div class="console-body">
+                    <div class="line"><span class="cyan">>>></span> import devlab_core as dl</div>
+                    <div class="line"><span class="cyan">>>></span> dl.initialize_logic(mode="EXTREME")</div>
+                    <div class="line"><span class="white">[LOG]</span> <span class="typing-text"></span><span
+                            class="cursor">_</span></div>
+                </div>
+            </div>
+
+            <div class="action-zone">
+                <button class="quantum-btn" onclick="window.location.href='portfolio.html'">
+                    <span class="btn-text">DECRYPT_WORKS</span>
+                    <span class="btn-flare"></span>
+                </button>
+                <button class="quantum-btn outline" onclick="window.location.href='contacts.html'">
+                    <span class="btn-text">ESTABLISH_LINK</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <section class="why_section">
+    <section class="deep_logic">
         <div class="container">
-            <div class="section-header">
-                <h2>Why BaghdadDevLab?</h2>
-                <p>Professional Python development focused on quality and reliability.</p>
+            <div class="logic-header">
+                <h2>// ENGINEERING_SPECIFICATIONS</h2>
             </div>
-            
-            <div class="cards_grid">
-                <div class="card_animate">
-                    <div class="card-icon"><span class="material-symbols-outlined">bolt</span></div>
-                    <h4>Fast Delivery</h4>
-                    <p>Optimized workflows ensuring your automation is live when you need it.</p>
+            <div class="spec-grid">
+                <div class="spec-card">
+                    <div class="spec-id">001</div>
+                    <span class="material-symbols-outlined">api</span>
+                    <h4>Backend Synthesis</h4>
+                    <p>Building high-concurrency API integrations that handle millions of requests with Python's
+                        Await/Async syntax.</p>
                 </div>
-                <div class="card_animate">
-                    <div class="card-icon"><span class="material-symbols-outlined">shield</span></div>
-                    <h4>Reliable Code</h4>
-                    <p>Built-in error handling and unit tests for mission-critical tasks.</p>
+                <div class="spec-card">
+                    <div class="spec-id">002</div>
+                    <span class="material-symbols-outlined">analytics</span>
+                    <h4>Quantitative Scraping</h4>
+                    <p>Industrial-grade scrapers designed to bypass detection while maintaining maximum data integrity.
+                    </p>
                 </div>
-                <div class="card_animate">
-                    <div class="card-icon"><span class="material-symbols-outlined">architecture</span></div>
-                    <h4>Clean Craft</h4>
-                    <p>Modular Python architecture that grows alongside your business.</p>
+                <div class="spec-card">
+                    <div class="spec-id">003</div>
+                    <span class="material-symbols-outlined">memory</span>
+                    <h4>Desktop Core</h4>
+                    <p>Low-latency desktop tools developed for Windows/Linux environments with polished custom UI
+                        shells.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <div id="footer"></div>
 
     <script>
-        // Load layout
-        fetch('header.html').then(r => r.text()).then(d => document.getElementById('header').innerHTML = d).catch(() => {});
-        fetch('footer.html').then(r => r.text()).then(d => document.getElementById('footer').innerHTML = d).catch(() => {});
-
-        // Typing Effect
-        const typingText = document.querySelector('.typing-text');
-        const phrases = ["import automation", "scrape_data()", "save_time = True", "craft_code(quality='high')"];
-        let i = 0, j = 0, current = '', isDeleting = false;
+        // TYPE ENGINE
+        const textElement = document.querySelector('.typing-text');
+        const logs = ["Loading Neural Modules...", "Bypassing WAF...", "Compiling Scripts...", "Optimization Complete."];
+        let i = 0, j = 0, isDel = false;
 
         function type() {
-            if (i >= phrases.length) i = 0;
-            const full = phrases[i];
-            current = isDeleting ? full.slice(0, j--) : full.slice(0, j++);
-            typingText.textContent = current;
-
-            if (!isDeleting && j > full.length) { isDeleting = true; setTimeout(type, 2000); }
-            else if (isDeleting && j === 0) { isDeleting = false; i++; setTimeout(type, 500); }
-            else { setTimeout(type, isDeleting ? 50 : 100); }
+            let current = logs[i];
+            textElement.textContent = isDel ? current.substring(0, j--) : current.substring(0, j++);
+            if (!isDel && j > current.length) { isDel = true; setTimeout(type, 1500); }
+            else if (isDel && j === 0) { isDel = false; i = (i + 1) % logs.length; setTimeout(type, 500); }
+            else { setTimeout(type, isDel ? 30 : 70); }
         }
         type();
 
-        // Scroll Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
-        }, { threshold: 0.2 });
-        document.querySelectorAll('.card_animate').forEach(c => observer.observe(c));
-
-        // Particle System
-        const canvas = document.getElementById('particles');
+        // 3D MATRIX CANVAS
+        const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
-        let w, h, particles = [];
+        let w, h, columns;
+        const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
 
-        function setSize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
-        window.onresize = setSize; setSize();
+        function init() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+            columns = Math.floor(w / 20);
+            drops = new Array(columns).fill(1);
+        }
 
-        class P {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * w; this.y = Math.random() * h;
-                this.s = Math.random() * 2; this.vx = Math.random() * 0.5 - 0.25;
-                this.vy = Math.random() * 0.5 - 0.25;
-            }
-            update() {
-                this.x += this.vx; this.y += this.vy;
-                if (this.x<0 || this.x>w || this.y<0 || this.y>h) this.reset();
-            }
-            draw() {
-                ctx.fillStyle = 'rgba(46, 182, 209, 0.2)';
-                ctx.fillRect(this.x, this.y, this.s, this.s);
+        let drops = [];
+        window.addEventListener('resize', init);
+        init();
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(2, 4, 8, 0.1)";
+            ctx.fillRect(0, 0, w, h);
+            ctx.fillStyle = "#2eb6d1";
+            ctx.font = "15px Fira Code";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * 20, drops[i] * 20);
+                if (drops[i] * 20 > h && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
             }
         }
-        for(let i=0; i<100; i++) particles.push(new P());
-        function anim() { ctx.clearRect(0,0,w,h); particles.forEach(p=>{p.update(); p.draw();}); requestAnimationFrame(anim); }
-        anim();
+        setInterval(drawMatrix, 50);
+
+        // CARD OBSERVER
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.spec-card').forEach(s => obs.observe(s));
     </script>
 </body>
+
 </html>
