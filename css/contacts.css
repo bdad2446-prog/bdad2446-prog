@@ -8,7 +8,8 @@
 body {
     font-family: Arial, sans-serif;
     background: #070b13;
-    overflow-x: hidden; /* Stops side-scrolling on phones */
+    overflow-x: hidden;
+    /* Stops side-scrolling on phones */
 }
 
 .contact_section {
@@ -58,7 +59,8 @@ body {
 .contact_section .parent_div .left_div form {
     background: #0f1729 !important;
     width: 100%;
-    padding: 0;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .contact_section .form-control,
@@ -177,12 +179,13 @@ body {
 @media (max-width: 992px) {
     .contact_section {
         padding: 40px 0;
-        justify-content: flex-start; /* Better for vertical scroll */
+        justify-content: flex-start;
+        /* Better for vertical scroll */
     }
 
     /* FORCING COLUMN DIRECTION */
     .contact_section .parent_div {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         width: 100%;
         gap: 40px;
@@ -191,7 +194,8 @@ body {
     .contact_section .parent_div .left_div,
     .contact_section .parent_div .right_div {
         width: 90%;
-        min-width: 0 !important; /* CRITICAL: Allows boxes to shrink on phones */
+        min-width: 0 !important;
+        /* CRITICAL: Allows boxes to shrink on phones */
         flex: none;
         padding: 0;
     }
