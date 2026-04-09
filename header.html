@@ -115,9 +115,49 @@
             z-index: 2001;
         }
 
+        /* Custom Fiverr Button Styles */
+        .header_section nav .fiverr_btn {
+            background: rgba(29, 191, 115, 0.05);
+            /* Very subtle Fiverr green tint */
+            border: 1px solid rgba(29, 191, 115, 0.3);
+            color: #1dbf73;
+            /* Official Fiverr Green */
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-family: var(--font-code);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Specific styling for the 'fi' to mimic their logo vibe */
+        .fiverr_text {
+            font-weight: 800;
+        }
+
+        /* Hover Effect: Glow and Solid Fill */
+        .header_section nav .fiverr_btn:hover {
+            background: #1dbf73;
+            color: #030507;
+            /* Dark background color from your root */
+            border-color: #1dbf73;
+            box-shadow: 0 0 15px rgba(29, 191, 115, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Disable the underline indicator for the button only */
+        .header_section nav .fiverr_btn::after {
+            display: none;
+        }
+
+        /* Mobile Adjustment for the button */
+
         #menu-checkbox {
             display: none;
         }
+
 
         /* Mobile Adjustments */
         @media (max-width: 850px) {
@@ -144,6 +184,14 @@
                 gap: 40px;
                 transform: translateX(100%);
                 transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+            }
+
+            .header_section nav .fiverr_btn {
+                margin-top: 10px;
+                font-size: 1.2rem;
+                padding: 12px 30px;
+                width: fit-content;
             }
 
             #menu-checkbox:checked~nav {
@@ -180,6 +228,9 @@
             <a href="portfolio.html">Portfolio</a>
             <a href="about.html">About</a>
             <a href="contacts.html">Contact</a>
+            <a href="https://www.fiverr.com/s/KeKY3LW" target="_blank" class="fiverr_btn">
+                <span class="fiverr_text">fi</span>verr
+            </a>
         </nav>
     </section>
 
